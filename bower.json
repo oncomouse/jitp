@@ -20,6 +20,7 @@
     "bootstrap-sass-official": ">=3.3.3",
     "es6-promise": "~3.0.2",
     "lodash": "~4.1.0",
-    "sprintf": "~1.0.3"
+    "sprintf": "~1.0.3",
+    "nvd3": "^1.8.2"
   }
 }
