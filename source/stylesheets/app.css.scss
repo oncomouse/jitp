@@ -1,0 +1,78 @@
+@import "bootstrap";
+
+// Custom CSS here:
+
+.col-centered{
+	float: none;
+	margin: 0 auto;
+}
+
+@media (max-width: $screen-sm-max) {
+	.dropdown-toggle, .panel.dropdown {
+		display: none;
+	}
+}
+
+#content {
+	margin-bottom: 250px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	.subtitle {
+		font-weight: 400;
+	}
+	a.footnote {
+		font-weight: 400;
+		font-size: $font-size-base - 2;
+	}
+}
+
+.footnotes {
+	margin-top: $line-height-computed * 6;
+	&:before{
+		@extend .h2;
+		content: "Notes";
+
+	}
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(255, 255, 255, 0.85);
+	margin: 0;
+	p {
+		margin: {
+			top: $line-height-computed / 2;
+			bottom: $line-height-computed;
+		};
+	}
+}
+
+table.table.table-hover.table-bordered {
+	margin-bottom: $line-height-computed * 5;
+	.modal & {
+		margin-bottom: 0;
+	}
+}
+
+#figure1, #figure2, #figure3, #figure4 {
+	svg {
+		width: 945px;
+		height: 472.5px;
+	}
+}
+
+#figure5, #figure6, #figure7, #figure8, #figure9, #figure10, #figure11, #figure12 {
+	svg {
+		height: 457px;
+		width: 457px;
+	}
+}
+.modal {
+	svg {
+		height: 457px !important;
+	}
+}

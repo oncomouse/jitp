@@ -1,0 +1,30 @@
+{
+	"female_tweeter": {
+		"female_presenter_named": 41,
+		"male_presenter_named": 11,
+		"female_non-presenter_named": 24,
+		"male_non-presenter_named": 4,
+		"no_person_named": 33,
+		"metacomment": 8,
+		"summary_or_quotation": 51,
+		"citation": 20,
+		"response_or_question": 29,
+		"room_climate": 5
+	},
+	"male_tweeter": {
+		"female_presenter_named": 5,
+		"male_presenter_named": 1,
+		"female_non-presenter_named": 3,
+		"male_non-presenter_named": 1,
+		"no_person_named": 21,
+		"metacomment": 2,
+		"summary_or_quotation": 11,
+		"citation": 2,
+		"response_or_question": 16,
+		"room_climate": 0
+	},
+	"presenters": {
+		"male": 2,
+		"female": 4
+	}
+}

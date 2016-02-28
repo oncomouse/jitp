@@ -1,0 +1,52 @@
+
+!!! 5
+-# paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+<!--[if lt IE 7]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7]>	  <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>	  <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!-->
+%html.no-js{ :lang => "en" }
+	<!--<![endif]-->
+	%head
+		%meta{ :charset => "utf-8" }/
+		
+		-# Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		-# Remove this if you use the .htaccess
+		-# %meta{ "http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=1" }/
+
+		%title
+			-if data['site'].has_key? 'name' and data.site.name != ""
+				= data.site.name
+			- if data['page'].has_key? 'title' and data.page.title != ""
+				= data.page.title
+			- else
+				Untitled Page
+
+		%meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }/
+		
+		/ Load Bootstrap (custom local build) and local styles:
+		-if build?
+			:css
+				#{Tilt.new("source/stylesheets/app.css.scss").render(:load_paths => ["#{Dir.pwd}/source/stylesheets", "#{Dir.pwd}/source/vendor/", "/Users/apilsch/.rvm/gems/ruby-2.2.2/gems/compass-core-1.0.3/stylesheets", Compass::SpriteImporter])}
+				
+				#{IO.read("source/vendor/nvd3/build/nv.d3.min.css")}
+		- else
+			= stylesheet_link_tag("app.css", "../vendor/nvd3/build/nv.d3.css", :media => "all", :rel => "stylesheet")	
+		
+		/ HTML5 shim, CSS3-Mediaqueries, and Respond.js IE8 support of HTML5 elements and media queries
+		<!--[if lt IE 9]>
+		= javascript_include_tag('//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js', '//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js')
+		= build? ? javascript_inline_tag("vendor/css3-mediaqueries.min.js") : javascript_include_tag("vendor/css3-mediaqueries.min.js")
+		<![endif]-->
+		- if build?
+			- Dir.glob("source/data/**/*").each do |file|
+				%script{:id => file.gsub(/^source\//,"").gsub(/[\/.]/,"_"), :type => "text/#{File.extname(file).sub(/^\./,"")}"}
+					:plain
+						#{IO.read(file)}
+			
+		:javascript
+			var build = #{build?};
+	%body{ :class => page_classes }
+		%article.container{ :role => 'main'}
+			= yield
+		= build? ? javascript_inline_tag("app.js") : javascript_include_tag("app.js")
