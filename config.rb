@@ -67,7 +67,7 @@ configure :build do
 	ignore "**/*.json"
 	
 	# Change this to build with a different file root.
-	set :http_prefix, "/"
+	set :http_prefix, "/jitp"
 	
 	activate :minify_css
     activate :minify_javascript, :inline => true
@@ -92,7 +92,7 @@ end
 
 activate :deploy do |deploy|
 	deploy.method = :rsync
-	deploy.user = "you"
-	deploy.host = "you.your-server.com"
-	deploy.path = "~/www/wherever/whenever"
+	deploy.user = "shawnaross"
+	deploy.host = "copland.dreamhost.com"
+	deploy.path = "~/www/shawnaross.com/jitp"
 end
