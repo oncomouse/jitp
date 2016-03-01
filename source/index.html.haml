@@ -1,5 +1,5 @@
 ---
-title: "A Bechdel Test for #MLA16—Shawna Ross & Andrew Pilsch" 
+title: "A Bechdel Test for #MLA16—Shawna Ross" 
 ---
 - def load_tab(tab_name)
 	- tab_file = tab_name.include?("/") ? File.join(File.dirname(tab_name), "_" + File.basename(tab_name)) : "_#{tab_name}"
@@ -11,12 +11,14 @@ title: "A Bechdel Test for #MLA16—Shawna Ross & Andrew Pilsch"
 		%h1
 			A Bechdel Test for #MLA16:
 			.subtitle Gendered Acts of Care on Academic Twitter
-		%h2.page-header Shawna Ross and Andrew Pilsch
+		%h2.page-header Shawna Ross
 #content.row
 	.col-md-10.col-centered
 		%ul.nav.nav-tabs.responsive
 			%li.active{:role=>"presentation"}
 				=link_to "Introduction", "#introduction", {"aria-controls" => "introduction", :role=>"tab","data-toggle" => "tab"}
+			%li{:role=>"presentation"}
+				=link_to "Theory", "#theory", {"aria-controls" => "theory", :role=>"tab","data-toggle" => "tab"}
 			%li{:role=>"presentation"}
 				=link_to "Methods", "#methods", {"aria-controls" => "methods", :role=>"tab","data-toggle" => "tab"}
 			%li.dropdown{:role=>"presentation"}
@@ -37,6 +39,8 @@ title: "A Bechdel Test for #MLA16—Shawna Ross & Andrew Pilsch"
 		.tab-content.responsive
 			.tab-pane.active#introduction{:role => "tabpanel"}
 				= load_tab("introduction")
+			.tab-pane#theory{:role => "tabpanel"}
+				= load_tab("theory")
 			.tab-pane#methods{:role => "tabpanel"}
 				= load_tab("methods")
 			.tab-pane#tables-s280{:role => "tabpanel"}
