@@ -2,9 +2,17 @@
 
 // Custom CSS here:
 
-.col-centered{
-	float: none;
-	margin: 0 auto;
+article {
+	@include container-fixed;
+    @media (min-width: $screen-sm-min) {
+    	width: $container-sm;
+    }
+    @media (min-width: $screen-md-min) {
+    	width: $container-md;
+    }
+    @media (min-width: $screen-lg-min) {
+    	width: $container-lg;
+    }
 }
 
 @media (max-width: $screen-sm-max) {
@@ -15,6 +23,11 @@
 
 #content {
 	margin-bottom: 250px;
+}
+#content,header,footer {
+	@include make-md-column(10, 4px);
+	margin: auto;
+	float: none !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -42,7 +55,6 @@ footer {
 	left: 0;
 	right: 0;
 	background: rgba(255, 255, 255, 0.85);
-	margin: 0;
 	p {
 		margin: {
 			top: $line-height-computed / 2;
