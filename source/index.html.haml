@@ -5,70 +5,66 @@ title: "A Bechdel Test for #MLA16—Shawna Ross"
 	- tab_file = tab_name.include?("/") ? File.join(File.dirname(tab_name), "_" + File.basename(tab_name)) : "_#{tab_name}"
 	- file_name = Dir.glob("source/tabs/**/#{tab_file}.*").first
 	- return file_name.nil? ? "File not found (#{tab_file})" : Tilt.new(file_name).render
-
-%header.row
-	.col-md-10.col-centered
-		%h1
-			A Bechdel Test for #MLA16:
-			.subtitle Gendered Acts of Care on Academic Twitter
-		%h2.page-header Shawna Ross
-#content.row
-	.col-md-10.col-centered
-		%ul.nav.nav-tabs.responsive
-			%li.active{:role=>"presentation"}
-				=link_to "Introduction", "#introduction", {"aria-controls" => "introduction", :role=>"tab","data-toggle" => "tab"}
-			%li{:role=>"presentation"}
-				=link_to "Theory", "#theory", {"aria-controls" => "theory", :role=>"tab","data-toggle" => "tab"}
-			%li{:role=>"presentation"}
-				=link_to "Methods", "#methods", {"aria-controls" => "methods", :role=>"tab","data-toggle" => "tab"}
-			%li.dropdown{:role=>"presentation"}
-				%a.dropdown-toggle#tables-dd{:href=>"#", "aria-controls" => "tables-dd-contents", "data-toggle" => "dropdown", "aria-expanded" => "false"}
-					Tables
-					%span.caret
-				%ul.dropdown-menu#tables-dd-content{"aria-labelledby" => "tables-dd"}
-					%li=link_to "Tables for #s280", "#tables-s280", {"aria-controls" => "tables-s280", :role=>"tab", "data-toggle" => "tab"}
-					%li=link_to "Tables for #s411", "#tables-s411", {"aria-controls" => "tables-s411", :role=>"tab", "data-toggle" => "tab"}
-					%li=link_to "Tables for #s508", "#tables-s508", {"aria-controls" => "tables-s508", :role=>"tab", "data-toggle" => "tab"}
-					%li=link_to "Aggregate Tables", "#tables-all", {"aria-controls" => "tables-all", :role=>"tab", "data-toggle" => "tab"}
-			%li{:role=>"presentation"}
-				=link_to "Figures", "#figures", {"aria-controls" => "figures", :role=>"tab","data-toggle" => "tab"}
-			%li{:role=>"presentation"}
-				=link_to "Results", "#results", {"aria-controls" => "results", :role=>"tab","data-toggle" => "tab"}
-			%li{:role=>"presentation"}
-				=link_to "Conclusion", "#conclusion", {"aria-controls" => "conclusion", :role=>"tab","data-toggle" => "tab"}
-			%li{:role=>"presentation"}
-				=link_to "Works Cited", "#bibliography", {"aria-controls" => "bibliography", :role=>"tab","data-toggle" => "tab"}
-		.tab-content.responsive
-			.tab-pane.active#introduction{:role => "tabpanel"}
-				= load_tab("introduction")
-			.tab-pane#theory{:role => "tabpanel"}
-				= load_tab("theory")
-			.tab-pane#methods{:role => "tabpanel"}
-				= load_tab("methods")
-			.tab-pane#tables-s280{:role => "tabpanel"}
-				= load_tab("tables/s280")
-			.tab-pane#tables-s411{:role => "tabpanel"}
-				= load_tab("tables/s411")
-			.tab-pane#tables-s508{:role => "tabpanel"}
-				= load_tab("tables/s508")
-			.tab-pane#tables-all{:role => "tabpanel"}
-				= load_tab("tables/all")
-			.tab-pane#figures{:role => "tabpanel"}
-				= load_tab("figures")
-			.tab-pane#results{:role => "tabpanel"}
-				= load_tab("results")
-			.tab-pane#conclusion{:role => "tabpanel"}
-				= load_tab("conclusion")
-			.tab-pane#bibliography{:role => "tabpanel"}
-				= load_tab("bibliography")
+%header
+	%h1
+		A Bechdel Test for #MLA16:
+		.subtitle Gendered Acts of Care on Academic Twitter
+	%h2.page-header Shawna Ross
+#content
+	%ul.nav.nav-tabs.responsive
+		%li.active{:role=>"presentation"}
+			=link_to "Introduction", "#introduction", {"aria-controls" => "introduction", :role=>"tab","data-toggle" => "tab"}
+		%li{:role=>"presentation"}
+			=link_to "Theory", "#theory", {"aria-controls" => "theory", :role=>"tab","data-toggle" => "tab"}
+		%li{:role=>"presentation"}
+			=link_to "Methods", "#methods", {"aria-controls" => "methods", :role=>"tab","data-toggle" => "tab"}
+		%li.dropdown{:role=>"presentation"}
+			%a.dropdown-toggle#tables-dd{:href=>"#", "aria-controls" => "tables-dd-contents", "data-toggle" => "dropdown", "aria-expanded" => "false"}
+				Tables
+				%span.caret
+			%ul.dropdown-menu#tables-dd-content{"aria-labelledby" => "tables-dd"}
+				%li=link_to "Tables for #s280", "#tables-s280", {"aria-controls" => "tables-s280", :role=>"tab", "data-toggle" => "tab"}
+				%li=link_to "Tables for #s411", "#tables-s411", {"aria-controls" => "tables-s411", :role=>"tab", "data-toggle" => "tab"}
+				%li=link_to "Tables for #s508", "#tables-s508", {"aria-controls" => "tables-s508", :role=>"tab", "data-toggle" => "tab"}
+				%li=link_to "Aggregate Tables", "#tables-all", {"aria-controls" => "tables-all", :role=>"tab", "data-toggle" => "tab"}
+		%li{:role=>"presentation"}
+			=link_to "Figures", "#figures", {"aria-controls" => "figures", :role=>"tab","data-toggle" => "tab"}
+		%li{:role=>"presentation"}
+			=link_to "Results", "#results", {"aria-controls" => "results", :role=>"tab","data-toggle" => "tab"}
+		%li{:role=>"presentation"}
+			=link_to "Conclusion", "#conclusion", {"aria-controls" => "conclusion", :role=>"tab","data-toggle" => "tab"}
+		%li{:role=>"presentation"}
+			=link_to "Works Cited", "#bibliography", {"aria-controls" => "bibliography", :role=>"tab","data-toggle" => "tab"}
+	.tab-content.responsive
+		.tab-pane.active#introduction{:role => "tabpanel"}
+			= load_tab("introduction")
+		.tab-pane#theory{:role => "tabpanel"}
+			= load_tab("theory")
+		.tab-pane#methods{:role => "tabpanel"}
+			= load_tab("methods")
+		.tab-pane#tables-s280{:role => "tabpanel"}
+			= load_tab("tables/s280")
+		.tab-pane#tables-s411{:role => "tabpanel"}
+			= load_tab("tables/s411")
+		.tab-pane#tables-s508{:role => "tabpanel"}
+			= load_tab("tables/s508")
+		.tab-pane#tables-all{:role => "tabpanel"}
+			= load_tab("tables/all")
+		.tab-pane#figures{:role => "tabpanel"}
+			= load_tab("figures")
+		.tab-pane#results{:role => "tabpanel"}
+			= load_tab("results")
+		.tab-pane#conclusion{:role => "tabpanel"}
+			= load_tab("conclusion")
+		.tab-pane#bibliography{:role => "tabpanel"}
+			= load_tab("bibliography")
 
 #ContentModal.modal.fade{:tabindex => "-1", :role => "dialog"}
 	.modal-dialog.modal-lg
 		.modal-content
 			.modal-body.modal-mountpoint
-%footer.row
-	.col-md-10.col-centered
-		%p.text-center
-			%a.btn-lg.btn.btn-primary{:href=>"mla-tweets.xlsx"}
-				%span.glyphicon.glyphicon-stats{"aria-hidden" => "true"}
-				Download The Excel Data
+%footer
+	%p.text-center
+		%a.btn-lg.btn.btn-primary{:href=>"mla-tweets.xlsx"}
+			%span.glyphicon.glyphicon-stats{"aria-hidden" => "true"}
+			Download The Excel Data
