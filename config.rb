@@ -74,9 +74,9 @@ configure :build do
     activate :inliner
     activate :minify_html do |html|
   	  html.remove_comments = true
-	  html.preserve_patterns = [
-		  /<script[^>]+type=.*?text\/[^>]+>.*?<\/script>/ # Preserve our data source inclusions
-	  ]
+	  #html.preserve_patterns = [
+	  #	  /<script[^>]+type=.*?text\/[^>]+>.*?<\/script>/ # Preserve our data source inclusions
+	  #]
     end
 	activate :cache_buster
 end
