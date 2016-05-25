@@ -93,6 +93,6 @@ end
 activate :deploy do |deploy|
 	deploy.method = :rsync
 	deploy.user = "shawnaross"
-	deploy.host = "copland.dreamhost.com"
+	deploy.host = "birkenfeld.dreamhost.com"
 	deploy.path = "~/www/shawnaross.com/jitp"
 end
