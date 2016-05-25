@@ -257,6 +257,8 @@ function fetch(url) {
 	
 	// Ready function for D3:
 	$(function() {
-		
+		window.setTimeout(function() {
+			$('#figure1, #figure2').find('*[transform="translate(0,17)"]').attr('transform', 'translate(0,25)');
+		}, 1000);
 	});
 }(window.jQuery));
