@@ -36,6 +36,8 @@ title: "A Bechdel Test for #MLA16—Shawna Ross"
 				=link_to "Results", "#results", {"aria-controls" => "results", :role=>"tab","data-toggle" => "tab"}
 			%li{:role=>"presentation"}
 				=link_to "Conclusion", "#conclusion", {"aria-controls" => "conclusion", :role=>"tab","data-toggle" => "tab"}
+			%li{:role=>"presentation"}
+				=link_to "Works Cited", "#bibliography", {"aria-controls" => "bibliography", :role=>"tab","data-toggle" => "tab"}
 		.tab-content.responsive
 			.tab-pane.active#introduction{:role => "tabpanel"}
 				= load_tab("introduction")
@@ -57,6 +59,8 @@ title: "A Bechdel Test for #MLA16—Shawna Ross"
 				= load_tab("results")
 			.tab-pane#conclusion{:role => "tabpanel"}
 				= load_tab("conclusion")
+			.tab-pane#bibliography{:role => "tabpanel"}
+				= load_tab("bibliography")
 
 #ContentModal.modal.fade{:tabindex => "-1", :role => "dialog"}
 	.modal-dialog.modal-lg
