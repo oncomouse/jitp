@@ -4,15 +4,6 @@
 
 article {
 	@include container-fixed;
-    @media (min-width: $screen-sm-min) {
-    	width: $container-sm;
-    }
-    @media (min-width: $screen-md-min) {
-    	width: $container-md;
-    }
-    @media (min-width: $screen-lg-min) {
-    	width: $container-lg;
-    }
 }
 
 @media (max-width: $screen-sm-max) {
@@ -78,8 +69,9 @@ table.table.table-hover.table-bordered {
 
 #figure1, #figure2, #figure3, #figure4 {
 	svg {
-		width: 945px;
-		height: 472.5px;
+		$svg-width: 925px;
+		width: $svg-width;
+		height: $svg-width/2;
 	}
 }
 
