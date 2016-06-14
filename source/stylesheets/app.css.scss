@@ -96,5 +96,7 @@ table.table.table-hover.table-bordered {
 }
 
 .modal-dialog {
-	width: 915px;
+	max-width: 915px;
+	width: 95%;
+	overflow: auto;
 }
